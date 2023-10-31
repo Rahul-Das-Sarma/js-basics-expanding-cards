@@ -1,0 +1,49 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+    align-items: center;    
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+
+.panel {
+    margin: 10px;
+    flex: 0.5;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    overflow: hidden;
+    border-radius: 40px;
+    position: relative;
+    transition: flex 0.3s ease-in;
+    height: 80vh;
+    background-position: center;
+}
+
+.panel h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #ffff;
+   opacity: 0;  
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;  
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100vw;
+    }
+    .panel:nth-child(4),
+    .panel:nth-child(5){
+        display: none;
+    }
+  }
